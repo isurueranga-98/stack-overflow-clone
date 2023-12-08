@@ -1,15 +1,46 @@
-import { ClerkProvider } from '@clerk/nextjs'
-import React from 'react'
- 
+import { ClerkProvider } from '@clerk/nextjs';
+import React from 'react';
+import {Inter, Space_Grotesk} from 'next/font/google';
+import type { Metadata } from 'next';
+import './globals.css';
+
+const inter = Inter({
+  subsets : ['latin'],
+  weight : ['100' , '200', '300', '400', '500', '600' , '700', '800' , '900'],
+  variable : '--font-inter'
+})
+
+const spaceGrotest = Space_Grotesk({
+  subsets : ['latin'],
+  weight : [ '300', '400', '500', '600' , '700'],
+  variable : '--font-spaceGrotest'
+})
+
+export const metadata : Metadata = {
+  title : 'DevFlow',
+  description : 'Clone of Stack Overflow',
+  icons : {
+    icon : '/assets/images/site-logo.svg'
+  }
+}
 export default function RootLayout({
   children,
+
 }: {
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{
+      elements : {
+        formButtonPrimary : 'primary-gradient',
+        footerActionLink : ' primary-text-gradient hover:text-primary-500'
+      }
+    }}>
       <html lang="en">
-        <body>{children}</body>
+      
+        <body className={`${inter.variable} ${spaceGrotest.variable}`}>
+
+          {children}</body>
  
       </html>
     </ClerkProvider>
