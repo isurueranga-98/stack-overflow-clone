@@ -18,7 +18,8 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          500: "#FF7000",
+          // 500: "#FF7000",
+          500: "#0496C7",
           100: "#FFF1E6",
         },
         dark: {
@@ -72,5 +73,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
 };
