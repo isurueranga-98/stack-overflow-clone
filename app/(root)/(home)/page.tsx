@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
 import Link from "next/link";
 
-
 const questions = [
   {
     _id: '1',
@@ -44,7 +43,6 @@ const questions = [
     createdAt: new Date('2021-09-11T12:12:00.000Z'),
   },
 ];
-
 
 export default function Home() {
   return (
